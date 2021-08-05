@@ -1,0 +1,198 @@
+* {
+    padding: 0;margin: 0;box-sizing: border-box;color: white;font-family: Tahoma, Verdana, sans-serif;
+    /* border: 1px solid white; */
+}
+:root {
+    --title: rgb(9, 38, 61);
+    --content: #17202A;
+  }
+
+html {
+    background-color: black;
+}
+
+::placeholder {
+    color: white;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    color: black;
+}
+
+button:hover {
+    border: 2px solid black;
+    color: white;
+}
+
+h1.website-heading {
+    color: rgb(191, 187, 211);
+    text-align: center;
+}
+.editor-box {
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+}
+
+.editor-box>input {
+    font-size: 20px;
+    width: 100%;
+    background-color: var(--title);
+}
+.editor-box>textarea {
+    width: 100%;
+    padding: 10px;
+    resize: vertical;
+    background-color: var(--content);
+}
+
+button.add-note {
+    padding: 5px;
+    background: rgb(53, 213, 221);
+    font-size: 17px;
+}
+
+.files-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* note item */
+.files-container>div {
+    flex: 23%;
+    max-width: 25%;
+    height: 150px;
+    background-color: rgb(36, 33, 33);
+    padding: 5px;
+    margin: 10px;
+    position: relative;
+    transition: opacity .7s;
+}
+
+
+.files-container>div>input {
+    height: 20%;
+    width: 100%;
+    font-size: 20px;
+    background-color:rgb(24, 25, 26);
+    color: inherit;
+    padding: 3px;
+}
+.files-container>div>textarea {
+    background-color: inherit;
+    color: inherit;
+    height: 80%;
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+    padding: 3px;
+}
+
+button.update {
+    padding: 4px;
+    background: rgb(79, 255, 88);
+    position: absolute;
+    bottom: 5%;
+    left: 25%;
+}
+
+button.delete {
+    padding: 4px;
+    background: red;
+    position: absolute;
+    bottom: 5%;
+    right: 25%;
+}
+
+div.modal-box {
+    display: flex;
+    visibility: hidden;
+    transition: opacity .5s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+div.modal-box>div.modal-content {
+    position: relative;
+    width: 60%;
+    height: 50%;
+}
+
+div.modal-content>input {
+    height: 15%;
+    width: 100%;
+    color: inherit;
+    background-color: var(--title);
+    padding: 5px;
+}
+div.modal-content>textarea {
+    height: 85%;
+    padding: 5px;
+    width: 100%;
+    resize: none;
+    color: inherit;
+    background-color: var(--content);
+}
+
+@media only screen and (max-width: 1024px) {
+    .files-container>div {
+        flex: 30%;
+        max-width: 33.35%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .files-container>div {
+        flex: 45.5%;
+        max-width: 50%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    h1.website-heading {
+        /* font-size: 50%; */
+        font-size: 5vw;
+        letter-spacing: 1.5px;
+    }
+    .files-container>div {
+        flex: 100%;
+        max-width: 100%;
+    }
+    .editor-box>input {
+        font-size: 6vw;
+    }
+    .editor-box>textarea {
+        font-size: 5vw;
+        word-spacing: 2px;
+        letter-spacing: 2px;
+    }
+
+    button.add-note {
+        font-size: 80%;
+        padding: 1px;
+    }
+    button.update {
+        padding: 1px;
+        font-size: 80%;
+        left: 15%;
+    }
+    button.delete {
+        padding: 1px;
+        font-size: 80%;
+        right: 15%;
+    }
+    div.modal-box>div.modal-content {
+        height: 100%;
+        width: 100%;
+    }
+}
